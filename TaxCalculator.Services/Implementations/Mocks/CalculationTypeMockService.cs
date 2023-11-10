@@ -1,7 +1,7 @@
 ﻿using TaxCalculator.Models;
 using TaxCalculator.Services.Interfaces;
 
-namespace TaxCalculator.Services.Implementations
+namespace TaxCalculator.Services.Implementations.Mocks
 {
     public class CalculationTypeMockService : ICalculationTypeService
     {
@@ -9,7 +9,7 @@ namespace TaxCalculator.Services.Implementations
 
         public async Task<List<CalculationType>> GetAll()
         {
-            return new List<CalculationType> {            
+            return new List<CalculationType> {
                 new CalculationType{
                     Id = Guid.NewGuid(), PostalCode = "7441", TaxCalculationType = "Progressive"
                 },

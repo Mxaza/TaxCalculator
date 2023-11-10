@@ -1,4 +1,4 @@
-using TaxCalculator.Services.Implementations;
+using TaxCalculator.Services.Implementations.Mocks;
 using TaxCalculator.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<ICalculationTypeService, CalculationTypeMockService>();
+builder.Services.AddTransient<IRatesService, RatesMockService>();
 
 var app = builder.Build();
 

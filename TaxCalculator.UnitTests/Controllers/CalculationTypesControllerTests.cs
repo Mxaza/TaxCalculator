@@ -10,7 +10,7 @@ namespace TaxCalculator.UnitTests.Controllers
     public class CalculationTypesControllerTests
     {      
         [Test]
-        public async Task CalculationTypesController_CalculateTax_OnSuccess()
+        public async Task CalculationTypesController_Get_OnSuccess()
         {
             //Arrange
             var mockLogger = new Mock<ILogger<CalculationTypesController>>();
@@ -33,7 +33,7 @@ namespace TaxCalculator.UnitTests.Controllers
         }
 
         [Test]
-        public async Task CalculationTypesController_CalculateTax_OnNoContent()
+        public async Task CalculationTypesController_Get_OnNoContent()
         {
             //Arrange
             var mockLogger = new Mock<ILogger<CalculationTypesController>>();
@@ -54,7 +54,8 @@ namespace TaxCalculator.UnitTests.Controllers
             Assert.True(statusCodeResult.StatusCode == ResponseCodes.NoContent);
         }
 
-        public async Task CalculationTypesController_CalculateTax_OnInternalServerError()
+        [Test]
+        public async Task CalculationTypesController_Get_OnInternalServerError()
         {
             //Arrange
             var mockLogger = new Mock<ILogger<CalculationTypesController>>();
