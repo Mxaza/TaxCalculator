@@ -3,7 +3,7 @@ using TaxCalculator.API.Controllers;
 
 namespace TaxCalculator.UnitTests.Controllers
 {
-    public class Tests
+    public class TaxCalculatorControllerTests
     {
         [SetUp]
         public void Setup()
