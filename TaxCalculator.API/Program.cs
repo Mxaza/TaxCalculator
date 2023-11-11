@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<ICalculationTypeService, CalculationTypeMockService>();
 builder.Services.AddTransient<IRatesService, RatesMockService>();
+builder.Services.AddTransient<IRatesService, RatesMockService>();
 
 var app = builder.Build();
 
