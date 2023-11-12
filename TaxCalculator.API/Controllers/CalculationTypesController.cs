@@ -9,11 +9,11 @@ namespace TaxCalculator.API.Controllers
     public class CalculationTypesController : ControllerBase
     {
         private readonly ILogger<CalculationTypesController> _logger;
-        private readonly ICalculationTypeService _service;
+        private readonly ICalculationTypesService _service;
 
         public CalculationTypesController(
             ILogger<CalculationTypesController> logger,
-            ICalculationTypeService service)
+            ICalculationTypesService service)
         {
             _logger = logger;
             _service = service;            

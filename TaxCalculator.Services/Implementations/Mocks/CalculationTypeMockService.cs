@@ -3,9 +3,9 @@ using TaxCalculator.Services.Interfaces;
 
 namespace TaxCalculator.Services.Implementations.Mocks
 {
-    public class CalculationTypeMockService : ICalculationTypeService
+    public class CalculationTypesMockService : ICalculationTypesService
     {
-        public CalculationTypeMockService() { }
+        public CalculationTypesMockService() { }
 
         public async Task<List<CalculationType>> GetAll()
         {

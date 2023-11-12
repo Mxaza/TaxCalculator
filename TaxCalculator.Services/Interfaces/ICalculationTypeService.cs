@@ -2,7 +2,7 @@
 
 namespace TaxCalculator.Services.Interfaces
 {
-    public interface ICalculationTypeService
+    public interface ICalculationTypesService
     {
         Task<List<CalculationType>> GetAll();
     }
