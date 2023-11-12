@@ -13,11 +13,6 @@ namespace TaxCalculator.Repositories.Contexts
 
         public virtual DbSet<CalculationType> CalculationTypes { get; set; }
         public virtual DbSet<Rate> Rates { get; set; }
-        public virtual DbSet<TaxCalculationResponse> TaxCalculationResults { get; set; }
-
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TaxCalculatorDb;Trusted_Connection=True;MultipleActiveResultSets=true");
-        //}
+        public virtual DbSet<TaxCalculationResponse> TaxCalculationResults { get; set; }        
     }
 }
