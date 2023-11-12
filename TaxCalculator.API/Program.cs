@@ -20,7 +20,9 @@ builder.Services.AddDbContext<TaxCalculatorContext>(
 
 builder.Services.AddTransient<IRatesRepository, RatesRepository>();
 builder.Services.AddTransient<ICalculationTypesRepository, CalculationTypesRepository>();
+builder.Services.AddTransient<ITaxCalculationRepository, TaxCalculationRepository>();
 
+builder.Services.AddTransient<ITaxCalculationService, TaxCalculationService>();
 builder.Services.AddTransient<IRatesService, RatesService>();
 builder.Services.AddTransient<ICalculationTypesService, CalculationTypesService>();
 
