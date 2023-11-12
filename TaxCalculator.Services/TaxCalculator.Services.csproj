@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TaxCalculator.Models\TaxCalculator.Models.csproj" />
+    <ProjectReference Include="..\TaxCalculator.Repositories\TaxCalculator.Repositories.csproj" />
   </ItemGroup>
 
 </Project>
