@@ -1,27 +1,21 @@
 ﻿using TaxCalculator.Models;
+using TaxCalculator.Repositories.Interfaces;
 using TaxCalculator.Services.Interfaces;
 
 namespace TaxCalculator.Services.Implementations
 {
-    internal class TaxCalculationService : ITaxCalculationService
+    public class TaxCalculationService : ITaxCalculationService
     {
-        private readonly ICalculationTypesService _calculationTypeService;
-        private readonly IRatesService _ratesService;
+        private readonly ITaxCalculationRepository _taxCalculationRepository;
 
-        public TaxCalculationService(
-            ICalculationTypesService calculationTypeService,
-            IRatesService ratesService)
-        {
-            _calculationTypeService = calculationTypeService;
-            _ratesService = ratesService;
+        public TaxCalculationService(ITaxCalculationRepository taxCalculationRepository)
+        {           
+            _taxCalculationRepository = taxCalculationRepository;
         }
 
         public async Task<double> CalculateTax(TaxCalculationRequest request)
         {
             double result = 0;
-
-            List<CalculationType> types = await _calculationTypeService.GetAll();
-            List<Rate> rates = await _ratesService.GetAll();            
 
             //TODO: Refactor  
             switch (request.PostalCode)
@@ -38,14 +32,17 @@ namespace TaxCalculator.Services.Implementations
                     break;
             }
 
-            //TODO: Persist results            
+            // Persist results
+            var taxCalculationResponse = new TaxCalculationResponse
+            {
+                AnnualIncome = request.AnnualIncome,
+                PostalCode = request.PostalCode,
+                CalculatedTax = result,
+                DateCreated = DateTime.UtcNow
+            };
+            await SaveResults(taxCalculationResponse);
 
             return result;
-        }
-
-        public async Task SaveResults(TaxCalculationResponse taxCalculationResult)
-        {
-            throw new NotImplementedException();            
         }
 
         private double CalculateFlatValueTax(TaxCalculationRequest request)
@@ -95,6 +92,11 @@ namespace TaxCalculator.Services.Implementations
             }
 
             return result;
+        }
+
+        private async Task SaveResults(TaxCalculationResponse taxCalculationResponse)
+        {
+            await _taxCalculationRepository.SaveResults(taxCalculationResponse);
         }
     }
 }
