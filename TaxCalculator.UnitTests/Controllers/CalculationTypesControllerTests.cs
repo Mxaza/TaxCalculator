@@ -14,7 +14,7 @@ namespace TaxCalculator.UnitTests.Controllers
         {
             //Arrange
             var mockLogger = new Mock<ILogger<CalculationTypesController>>();
-            var mockService = new Mock<ICalculationTypeService>();
+            var mockService = new Mock<ICalculationTypesService>();
 
             var calculationTypes = new List<CalculationType>();
 
@@ -37,7 +37,7 @@ namespace TaxCalculator.UnitTests.Controllers
         {
             //Arrange
             var mockLogger = new Mock<ILogger<CalculationTypesController>>();
-            var mockService = new Mock<ICalculationTypeService>();
+            var mockService = new Mock<ICalculationTypesService>();
 
             var calculationTypes = new List<CalculationType>();
 
@@ -59,7 +59,7 @@ namespace TaxCalculator.UnitTests.Controllers
         {
             //Arrange
             var mockLogger = new Mock<ILogger<CalculationTypesController>>();
-            var mockService = new Mock<ICalculationTypeService>();
+            var mockService = new Mock<ICalculationTypesService>();
 
             var calculationTypes = new List<CalculationType>();
 

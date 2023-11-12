@@ -5,11 +5,11 @@ namespace TaxCalculator.Services.Implementations
 {
     internal class TaxCalculationService : ITaxCalculationService
     {
-        private readonly ICalculationTypeService _calculationTypeService;
+        private readonly ICalculationTypesService _calculationTypeService;
         private readonly IRatesService _ratesService;
 
         public TaxCalculationService(
-            ICalculationTypeService calculationTypeService,
+            ICalculationTypesService calculationTypeService,
             IRatesService ratesService)
         {
             _calculationTypeService = calculationTypeService;

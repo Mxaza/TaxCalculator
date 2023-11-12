@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TaxCalculator.Models;
-using TaxCalculator.Repositories;
+using TaxCalculator.Repositories.Contexts;
 using TaxCalculator.Repositories.Implementantios;
 using TaxCalculator.Repositories.Interfaces;
 using TaxCalculator.Services.Implementations;
@@ -19,12 +19,10 @@ builder.Services.AddDbContext<TaxCalculatorContext>(
         options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddTransient<IRatesRepository, RatesRepository>();
+builder.Services.AddTransient<ICalculationTypesRepository, CalculationTypesRepository>();
 
 builder.Services.AddTransient<IRatesService, RatesService>();
-builder.Services.AddTransient<ICalculationTypeService, CalculationTypeMockService>();
-
-
-
+builder.Services.AddTransient<ICalculationTypesService, CalculationTypesService>();
 
 var app = builder.Build();
 
