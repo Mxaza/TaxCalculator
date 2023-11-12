@@ -25,15 +25,19 @@ namespace TaxCalculator.API.Controllers
         {
             try
             {
-                var result = await _service.GetAll();
+                var result = await _service.GetAll();               
 
                 if (result.Count > 0)
                 {
                     return StatusCode(ResponseCodes.Ok, result);
                 }
-                else
+                else if (result.Count == 0)
                 {
                     return StatusCode(ResponseCodes.NoContent, result);
+                }
+                else
+                {
+                    return StatusCode(ResponseCodes.NotFound);
                 }
             }
             catch (Exception ex)
