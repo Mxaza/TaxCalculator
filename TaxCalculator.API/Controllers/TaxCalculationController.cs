@@ -30,7 +30,7 @@ namespace TaxCalculator.API.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var result = await _service.CalculateTax(request);
+                var result = await _service.CalculateTax(request);                
 
                 return StatusCode(ResponseCodes.Ok, result);
             }
