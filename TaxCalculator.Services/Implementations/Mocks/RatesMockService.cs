@@ -13,7 +13,7 @@ namespace TaxCalculator.Services.Implementations.Mocks
                 new Rate{ Id = Guid.NewGuid(), Percentage = 25.0, From = 33951, To = 82250 },
                 new Rate{ Id = Guid.NewGuid(), Percentage = 28.0, From = 82251, To = 171550 },
                 new Rate{ Id = Guid.NewGuid(), Percentage = 33.0, From = 171551, To = 372950 },
-                new Rate{ Id = Guid.NewGuid(), Percentage = 35.0, From = 372951 }
+                new Rate{ Id = Guid.NewGuid(), Percentage = 35.0, From = 372951, To = double.MaxValue}
             };
         }
     }
